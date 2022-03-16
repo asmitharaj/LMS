@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS</title>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="icon" type="image/ico" th:href="@{/icons/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link th:href="@{/css/LmsStyle.css}" rel="stylesheet"/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-select/css/bootstrap-select.min.css}">
+    <script th:src="@{/webjars/bootstrap-select/js/bootstrap-select.min.js}"></script>
+    <script th:src="@{/webjars/jquery/3.2.0/jquery.js}"></script>
+	<script th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+    <script th:inline="javascript">
+		/*$(document).ready(function(){
+			$("#programList").change(function() {
+				var selectedProgram = $(this).val();
+				var selectElement =  $('#batchList');
+	            var batchListOptions = "";
+				$.ajax({	
+			        type: 'GET',
+			        url: "/lms/assignment/batches",
+		            data: {"programId" : selectedProgram},
+			        success: function(result){
+			        	var data = JSON.parse(result);
+			            for(var i=0; i<data.length; i++){
+			            	batchListOptions  += '<option value="' + data[i].batchId + '" >' + data[i].batchId + '</option>';
+			            }
+			            $("#batchList").html(batchListOptions);
+
+                        window.alert(data.length);
+			            for(var i=0; i<data.length; i++){
+			            	alert(data[i]);
+			            	selectElement.append($('<option></option>').val(data[i].batchId).html(data[i].batchId));
+                        }
+			            $("#batchList").trigger('contentChanged');  
+			            setInterval('refreshPage()', 5000);
+			        },
+			        error:function(){
+			            alert("error");
+			        }
+			
+			    });
+			});
+		});
+		function getBatches() {
+			var url = '/lms/assignment/batches';
+			if ($('#programList').val() != '') {
+		        url = url + '/' + $('#programList').val();
+		    }
+			$("#batchList").load(url);
+		}*/
+		$(document).ready(function(){
+			$("#programList").change(function() {
+				var selectedProgram = $(this).val();
+				$.ajax({	
+			        type: 'GET',
+			        url: "/lms/assignment/batches",
+		            data: {"programId" : selectedProgram},
+			        success: function(data){
+			            var batches = $('#batchList'), option='<option value="0">Select a batch</option>';
+			            batches.empty();
+			            for(var i=0; i<data.length; i++){
+			                option = option + "<option th:value='"+data[i].batchId + "'>"+ data[i].batchId + " - " + data[i].batchName + "</option>";
+			            }
+			            batches.append(option);
+			        },
+			        error:function(){
+			            alert("error");
+			        }
+			
+			    });
+			});
+		});
+	</script>
+</head>
+<body>
+<div th:replace="fragments/header :: headerfragment"></div>
+<div class="module">
+    <br/>
+    <h2 align="center">Add Assignment</h2>
+    <br/>
+</div>
+<div class="container my-5">
+    <form th:method="get" th:action="@{/assignment}">
+        <button type="submit" class="arrow-left">Back</button>
+        <br/><br/><br/>
+    </form>
+    <form method="post" th:action="@{/assignment/add}" th:object="${model}">
+        <br/>
+        <div th:replace="fragments/header :: messagefragment"></div>
+        <table>
+        	<tr>
+                <td><label for="programList" class="col-form-label">Program Id </label></td>
+                <td>
+                    <select class="selectpicker" data-live-search="true" required id="programList">
+                        <option th:each="program : ${programs}" 
+                        	th:value="${program.programId}" 
+                        	th:text="|${program.programId} - ${program.programName}|">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="batchList" class="col-form-label">Batch Id </label></td>
+                <td>
+               		<!--  <select class="selectpicker" id="batchList" data-live-search="true">
+               		    <option th:each="batch : ${batches}" th:value="${batch.batchId}" th:text="|${batch.batchId} - ${batch.batchName}|">
+                        </option>
+               			<option value="">Select test</option>
+               			<option th:each="batch : ${batches}" th:insert="fragments/BatchList :: resultsList">
+               			</option>
+   					</select>-->
+					<select class="form-control" data-live-search="true" th:field="*{batchId}" id="batchList" required>
+				   	 	<option value="">Select a batch</option>
+				    	<option  th:each="batch : ${batches}" 
+				    			 th:value="${batch.batchId}"	
+				    			 th:text="|${batch.batchId} - ${batch.batchName}|">
+				    	</option>
+				    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="assignmentName" class="col-form-label">Assignment Name</label></td>
+                <td>
+                    <input id="assignmentName" placeholder="Assignment name" required type="text"
+                           th:field="*{assignmentName}"
+                           class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="assignmentDescription" class="col-form-label">Assignment Description</label></td>
+                <td>
+                    <input id="assignmentDescription" placeholder="Assignment Description" required type="text"
+                           th:field="*{assignmentDescription}"
+                           class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="assignmentDueDate" class="col-form-label">Assignment Due Date</label></td>
+                <td>
+                   <input id="assignmentDueDate" placeholder="Due Date" type="date" required
+                   		  th:field="*{dueDate}"  class="form-control" pattern="2017-06-01">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pathAttachment1" class="col-form-label">Assignment File 1</label></td>
+                <td>
+					<input id="pathAttachment1" placeholder="Assignment File 1" type="file" 
+					th:field="*{pathAttachment1}" class="form-control-file">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pathAttachment2" class="col-form-label">Assignment File 2</label></td>
+                <td>
+					<input id="pathAttachment2" placeholder="Assignment File 2" type="file" 
+					th:field="*{pathAttachment2}" class="form-control-file">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pathAttachment3" class="col-form-label">Assignment File 3</label></td>
+                <td>
+					<input id="pathAttachment3" placeholder="Assignment File 3" type="file" 
+					th:field="*{pathAttachment3}" class="form-control-file">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pathAttachment4" class="col-form-label">Assignment File 4</label></td>
+                <td>
+					<input id="pathAttachment4" placeholder="Assignment File 4" type="file" 
+					th:field="*{pathAttachment4}" class="form-control-file">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pathAttachment5" class="col-form-label">Assignment File 5</label></td>
+                <td>
+					<input id="pathAttachment5" placeholder="Assignment File 5" type="file" 
+					th:field="*{pathAttachment5}" class="form-control-file">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <div th:replace="fragments/header :: errorfragment"></div>
+                    <button type="submit" class="block">Add</button>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+</div>
+</body>
+</html>
