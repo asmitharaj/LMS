@@ -4,9 +4,9 @@ server:
     context-path: /lms
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: asmitha
+    url: jdbc:postgresql://ec2-3-230-122-20.compute-1.amazonaws.com:5432/da8kbctq0e9s08
+    username: wtowsjjftweqoz
+    password: 3412555bba93027244ffdca21b7ea07bceb8990c156e20fe75c084d0e7e298b6
   jackson.deserialization.fail-on-unknown-properties: true
   mvc.hiddenmethod.filter.enabled: true
   main.allow-bean-definition-overriding: true
