@@ -49,7 +49,8 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			</dependency>
+			<version>2.0.1.Final</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -64,7 +65,8 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			</dependency>
+			<version>3.12.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
@@ -130,6 +132,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <groupId>com.heroku.sdk</groupId>
+		        <artifactId>heroku-maven-plugin</artifactId>
+		        <version>3.0.3</version>
+		      </plugin>
 		</plugins>
 	</build>
 </project>
