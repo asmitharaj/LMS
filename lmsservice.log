@@ -144,3 +144,56 @@
 2022-04-12 00:24:08.863  INFO 98523 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listDataUsingGET_4
 2022-04-12 00:24:08.895  INFO 98523 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateProgramUsingPUT_1
 2022-04-12 00:24:09.585  INFO 98523 --- [restartedMain] c.numpyninja.lms.LmsServicesApplication  : Started LmsServicesApplication in 7.398 seconds (JVM running for 8.327)
+2022-04-12 00:43:12.691  INFO 98523 --- [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-04-12 00:43:13.194  INFO 98523 --- [RMI TCP Connection(21)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-12 00:43:13.225  INFO 98523 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-12 00:43:13.278  INFO 98523 --- [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-12 00:43:30.103  INFO 99167 --- [restartedMain] c.numpyninja.lms.LmsServicesApplication  : Starting LmsServicesApplication using Java 15.0.2 on Asmithas-MacBook.local with PID 99167 (/Users/asmitha/jobSearch/java/eclipse-workspace/LMS_Service/target/classes started by asmitha in /Users/asmitha/jobSearch/java/eclipse-workspace/LMS_Service)
+2022-04-12 00:43:30.105  INFO 99167 --- [restartedMain] c.numpyninja.lms.LmsServicesApplication  : No active profile set, falling back to default profiles: default
+2022-04-12 00:43:30.177  INFO 99167 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-12 00:43:30.177  INFO 99167 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-12 00:43:31.165  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-12 00:43:31.166  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-04-12 00:43:31.199  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.AssignmentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.202  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.AttendanceRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.205  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.ClassRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.207  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.ProgBatchRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.211  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.ProgramRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.216  INFO 99167 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.numpyninja.lms.repository.SubmissionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-04-12 00:43:31.217  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 0 JDBC repository interfaces.
+2022-04-12 00:43:31.230  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-12 00:43:31.233  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-12 00:43:31.279  INFO 99167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.
+2022-04-12 00:43:31.870  INFO 99167 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2022-04-12 00:43:31.880  INFO 99167 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-12 00:43:31.880  INFO 99167 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-04-12 00:43:31.942  INFO 99167 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/lms]    : Initializing Spring embedded WebApplicationContext
+2022-04-12 00:43:31.942  INFO 99167 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1764 ms
+2022-04-12 00:43:32.062  INFO 99167 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-12 00:43:32.109  INFO 99167 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-04-12 00:43:32.185  INFO 99167 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-12 00:43:32.246  INFO 99167 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-12 00:43:32.414  INFO 99167 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-12 00:43:32.433  INFO 99167 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-12 00:43:33.148  INFO 99167 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-12 00:43:33.152  INFO 99167 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-12 00:43:33.976  WARN 99167 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-12 00:43:34.106  INFO 99167 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-04-12 00:43:34.231  INFO 99167 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-12 00:43:34.955  INFO 99167 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path '/lms'
+2022-04-12 00:43:34.958  INFO 99167 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-04-12 00:43:34.971  INFO 99167 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-04-12 00:43:34.991  INFO 99167 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-04-12 00:43:35.755  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listDataUsingGET_1
+2022-04-12 00:43:35.967  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listDataUsingGET_2
+2022-04-12 00:43:36.212  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listDataUsingGET_3
+2022-04-12 00:43:36.342  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addProgramUsingGET_1
+2022-04-12 00:43:36.370  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createProgramUsingPOST_1
+2022-04-12 00:43:36.401  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteProgramUsingGET_1
+2022-04-12 00:43:36.428  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editProgramUsingGET_1
+2022-04-12 00:43:36.454  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listDataUsingGET_4
+2022-04-12 00:43:36.485  INFO 99167 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateProgramUsingPUT_1
+2022-04-12 00:43:37.109  INFO 99167 --- [restartedMain] c.numpyninja.lms.LmsServicesApplication  : Started LmsServicesApplication in 7.548 seconds (JVM running for 8.762)
+2022-04-12 00:43:46.103  INFO 99167 --- [http-nio-1234-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/lms]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-12 00:43:46.104  INFO 99167 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-12 00:43:46.112  INFO 99167 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
