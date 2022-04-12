@@ -124,12 +124,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<skip>true</skip>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<executions>
+			          <execution>
+			           <phase>none</phase>
+			          </execution>
+			        </executions>  
 				</configuration>
 			</plugin>
 			<plugin>
