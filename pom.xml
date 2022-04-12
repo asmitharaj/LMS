@@ -124,7 +124,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<version>2.0.8</version>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
